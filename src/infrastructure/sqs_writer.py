@@ -13,4 +13,4 @@ if '__main__' == __name__:
     queue_name = 'my_writer_queue.fifo'  # SQS FIFO queue names must end with .fifo
     queue_url, queue_arn = create_sqs_queue_with_sns_subscription(queue_name, topic_arn)
     create_subscription(queue_arn, topic_arn , True)
-    logger.info(f'SQS write queue {queue_arn} created')
+    logger.info(f'SQS write queue {queue_url} created')
