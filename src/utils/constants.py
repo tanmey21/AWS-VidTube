@@ -1,5 +1,3 @@
-reader_queue_arn = "arn:aws:sqs:us-east-1:000000000000:my_reader_queue.fifo"
-writer_queue_arn = "arn:aws:sqs:us-east-1:000000000000:my_writer_queue.fifo"
-sns_topic_arn = "arn:aws:sns:us-east-1:000000000000:my_topic.fifo"
-reader_queue_url = " http://sqs.us-east-1.localhost.localstack.cloud:4566/000000000000/my_reader_queue.fifo"
-writer_queue_url = " http://sqs.us-east-1.localhost.localstack.cloud:4566/000000000000/my_writer_queue.fifo"
+sns_topic_arn = "arn:aws:sns:us-east-1:473557153837:my_topic.fifo"
+reader_queue_url = "https://sqs.us-east-1.amazonaws.com/473557153837/my_reader_queue.fifo"
+writer_queue_url = "https://sqs.us-east-1.amazonaws.com/473557153837/my_writer_queue.fifo"

@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 
 if '__main__' == __name__:
-    topic_arn = 'arn:aws:sns:us-east-1:000000000000:my_topic.fifo'  # Replace with your SNS topic ARN
+    topic_arn = 'arn:aws:sns:us-east-1:473557153837:my_topic.fifo'  # Replace with your SNS topic ARN
     queue_name = 'my_reader_queue.fifo'  # SQS FIFO queue names must end with .fifo
     queue_url, queue_arn = create_sqs_queue_with_sns_subscription(queue_name, topic_arn)
     create_subscription(queue_arn, topic_arn)
