@@ -44,8 +44,8 @@ def create_subscription(queue_arn, topic_arn , codec_need = False):
         TopicArn=topic_arn,
         Protocol='sqs',
         Endpoint=queue_arn,
-        Attributes={
-            'FilterPolicy': json.dumps(filter_policy)
-        }
+        # Attributes={
+        #     'FilterPolicy': json.dumps(filter_policy)
+        # }
     )
 

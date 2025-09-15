@@ -6,7 +6,8 @@ logging.basicConfig(level=logging.INFO)
 def create_sns_topic(topic_name):
     sns_client = client_connect('sns')
     response = sns_client.create_topic(Name=topic_name,Attributes={
-        "FifoTopic": "true"
+        "FifoTopic": "true",
+        "ContentBasedDeduplication" : "true"
     })
     return response['TopicArn']
 
