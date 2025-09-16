@@ -5,6 +5,7 @@ import os
 load_dotenv()
 
 def client_connect(service_name):
+
     client = boto3.client(service_name,
                           region_name=os.getenv('REGION_NAME'),
                           aws_access_key_id=os.getenv('ACCESS_KEY'),

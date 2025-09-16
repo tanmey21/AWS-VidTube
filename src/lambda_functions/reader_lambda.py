@@ -44,15 +44,18 @@ def lambda_handler(event, context):
                 "body": str(e)
             }
 
-# if __name__ == "__main__":
-#     # Example event for local testing
-#     event = {
-#         "body": json.dumps({
-#             "userName": "JohnDoe junior",
-#             "password": "securepassword"
-#         })
-#     }
-#     context = {}
-#     response = lambda_handler(event, context)
-#     print(response)
+if __name__ == "__main__":
+    # Example event for local testing
+    curr = {
+        "body": json.dumps({
+            "userName": "JohnDoe junior",
+            "password": "securepassword"
+        })
+    }
+    event = {
+        "Records": [curr]
+    }
+    context = {}
+    response = lambda_handler(event, context)
+    print(response)
 
