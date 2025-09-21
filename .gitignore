@@ -4,3 +4,7 @@ __pycache__/
 *.pyo
 message.json
 .env
+.aws-sam
+/response.json
+/samconfig.toml
+./event.json

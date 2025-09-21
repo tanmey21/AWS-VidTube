@@ -1,4 +1,4 @@
-from src.utils.policy_connecting_sns_and_sqs import create_sqs_queue_with_sns_subscription, create_subscription
+from utils.policy_connecting_sns_and_sqs import create_sqs_queue_with_sns_subscription, create_subscription
 import logging
 
 logging.basicConfig(

@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+
+  FirstLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: reader_lambda
+      Handler: lambda_functions.reader_lambda.lambda_handler
+      Runtime: python3.10
+      CodeUri: ./src
+      Events:
+        SQSEvent:
+          Type: SQS
+          Properties:
+            Queue: arn:aws:sqs:us-east-1:473557153837:my_reader_queue.fifo
+            BatchSize: 10
+
+  SecondLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: writer_lambda
+      Handler: lambda_functions.writer_lambda.lambda_handler
+      Runtime: python3.10
+      CodeUri: ./src
+      Events:
+        SQSEvent:
+          Type: SQS
+          Properties:
+            Queue: arn:aws:sqs:us-east-1:473557153837:my_writer_queue.fifo
+            BatchSize: 10

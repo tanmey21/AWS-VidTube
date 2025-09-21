@@ -7,7 +7,6 @@ import certifi
 load_dotenv()
 
 def connecting_to_mongodb():
-
     try:
         client = MongoClient(os.getenv('MONGODB_URI'),tlsCAFile=certifi.where())
         client.admin.command('ping')

@@ -1,5 +1,5 @@
-from src.utils.configure_boto3 import client_connect
-from src.utils.constants import reader_queue_url
+from utils.configure_boto3 import client_connect
+from utils.constants import reader_queue_url
 import time
 sqs = client_connect("sqs")
 

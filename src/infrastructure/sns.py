@@ -1,5 +1,5 @@
 import logging
-from  src.utils.configure_boto3 import client_connect
+from utils.configure_boto3 import client_connect
 
 logging.basicConfig(level=logging.INFO)
 

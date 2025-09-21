@@ -1,5 +1,6 @@
-from src.utils.configure_boto3 import client_connect
+from utils.configure_boto3 import client_connect
 import json
+
 def policy_connecting_sns_and_sqs(topic_arn: str, queue_arn: str) -> dict:
     policy = {
             "Version": "2012-10-17",
@@ -39,7 +40,7 @@ def create_subscription(queue_arn, topic_arn , codec_need = False):
             'Policy': json.dumps(policy)
         }
     )
-    filter_policy = {"codec": [{"exists": codec_need}]}
+    filter_policy = {"hobbies": [{"exists": codec_need}]}
     sns.subscribe(
         TopicArn=topic_arn,
         Protocol='sqs',

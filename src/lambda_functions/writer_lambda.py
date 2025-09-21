@@ -1,5 +1,5 @@
 import json
-from src.utils.mongodb_connection import connecting_to_mongodb
+from utils.mongodb_connection import connecting_to_mongodb
 
 def lambda_handler(event, context):
     try:
@@ -23,7 +23,10 @@ def lambda_handler(event, context):
                 "password":password ,
                 "hobbies":hobbies
             }
-            result = collection.find_one(user)
+            result = collection.find_one({
+                "userName": userName,
+                "password": password
+            })
             if result:
                 return {
                     "statusCode": 400,
@@ -47,17 +50,3 @@ def lambda_handler(event, context):
                 "body": str(e)
             }
 
-# if __name__ == "__main__":
-#     # Example event for local testing
-#     event = {
-#         "Records": [{
-#             "body": json.dumps({
-#                 "userName": "JohnDoe junior",
-#                 "password": "securepassword",
-#                 "hobbies": ['reading', 'gaming']
-#             })
-#         }]
-#     }
-#     context = {}
-#     response = lambda_handler(event, context)
-#     print(response)

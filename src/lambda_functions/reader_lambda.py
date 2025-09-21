@@ -1,5 +1,5 @@
 import json
-from src.utils.mongodb_connection import connecting_to_mongodb
+from utils.mongodb_connection import connecting_to_mongodb
 
 
 def lambda_handler(event, context):
@@ -16,6 +16,9 @@ def lambda_handler(event, context):
         try:
             userName = json.loads(record['body'])['userName']
             password = json.loads(record['body'])['password']
+
+            print("username:", userName)
+            print("password:", password)
 
             user = collection.find_one({
         "$and": [
